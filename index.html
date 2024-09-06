@@ -5,46 +5,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A-Frame VR Lessons</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f4f4f4;
+      /* Basic Reset */
+      * {
         margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .container {
-        text-align: center;
+
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4e3c3;
+        color: #000000;
+        line-height: 1.5;
+        font-size: 16px;
+        display: flex;
+        min-height: 100vh;
       }
-      h1 {
-        font-size: 2.5em;
-        color: #333;
+
+      /* Side Menu */
+      nav {
+        width: 300px;
+        background-color: #e3d5b6;
+        padding: 20px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        overflow-y: auto;
       }
-      a {
-        display: block;
-        margin: 10px 0;
-        padding: 10px 20px;
-        font-size: 1.2em;
-        color: #fff;
-        background-color: #4CAF50;
+
+      nav h2 {
+        color: #ff4d00;
+        font-size: 22px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ff4d00;
+        padding-bottom: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin-bottom: 15px;
+      }
+
+      nav ul li a {
+        color: #000000;
         text-decoration: none;
+        font-size: 18px;
+        padding: 10px;
+        display: block;
         border-radius: 5px;
+        background-color: #e3d5b6;
+        border-left: 4px solid #ff4d00;
         transition: background-color 0.3s ease;
       }
-      a:hover {
-        background-color: #45a049;
+
+      nav ul li a:hover {
+        background-color: #d4c4a8;
+      }
+
+      /* Main Content Area */
+      main {
+        margin-left: 300px;
+        padding: 40px;
+        flex-grow: 1;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h1, h2 {
+        font-family: 'Courier New', monospace;
+        color: #ff4d00;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-size: 28px;
+        border-bottom: 2px solid #ff4d00;
+        padding-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 22px;
+        background-color: rgba(211, 211, 211, 0.3);
+        padding: 10px 20px;
+        position: relative;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      .artifact-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+      }
+
+      .artifact-card {
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .artifact-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .artifact-name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        text-align: center;
+        transform: translateY(100%);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .artifact-card:hover .artifact-name {
+        transform: translateY(0);
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>A-Frame VR Lessons</h1>
-      <a href="Lesson_01.html">Lesson 1: Scene and Entity Basics</a>
-      <a href="Lesson_02.html">Lesson 2: Animating Entities</a>
-      <a href="Lesson_03.html">Lesson 3: User Interactions</a>
-      <a href="Lesson_04.html">Lesson 4: A-Frame: Adding Assets and Building a Scene</a>
-    </div>
-    </div>
+    <!-- Side Menu -->
+    <nav>
+      <h2>A-Frame VR Lessons</h2>
+      <ul>
+        <li><a href="Lesson_01.html">Lesson 1: Scene and Entity Basics</a></li>
+        <li><a href="Lesson_02.html">Lesson 2: Animating Entities</a></li>
+        <li><a href="Lesson_03.html">Lesson 3: User Interactions</a></li>
+        <li><a href="Lesson_04.html">Lesson 4: Adding Assets and Building a Scene</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+      <h1>Welcome to A-Frame VR Lessons</h1>
+      <p>Explore the fundamentals of creating virtual reality experiences using A-Frame. Each lesson provides hands-on experience with core VR concepts, from setting up scenes to adding animations and interactions.</p>
+      <p>All code for these examples can be found at <a href="https://github.com/hartswf0/a-frame-vr-intro">https://github.com/hartswf0/a-frame-vr-intro</a> as well as a README.md for getting started.</p>
+      <h2>Lesson Overview</h2>
+      <div class="artifact-cards">
+        <div class="artifact-card">
+          <a href="Lesson_01.html">
+            <img src="ASSETS/ground.jpg" alt="Lesson 1: Scene and Entity Basics" class="artifact-image">
+            <div class="artifact-name">Lesson 1: Scene and Entity Basics</div>
+          </a>
+        </div>
+
+        <div class="artifact-card">
+          <a href="Lesson_02.html">
+            <img src="ASSETS/site.jpg" alt="Lesson 2: Animating Entities" class="artifact-image">
+            <div class="artifact-name">Lesson 2: Animating Entities</div>
+          </a>
+        </div>
+
+        <div class="artifact-card">
+          <a href="Lesson_03.html">
+            <img src="ASSETS/perspective.jpg" alt="Lesson 3: User Interactions" class="artifact-image">
+            <div class="artifact-name">Lesson 3: User Interactions</div>
+          </a>
+        </div>
+
+        <div class="artifact-card">
+          <a href="Lesson_04.html">
+            <img src="ASSETS/sky.jpg" alt="Lesson 4: Adding Assets and Building a Scene" class="artifact-image">
+            <div class="artifact-name">Lesson 4: Adding Assets and Building a Scene</div>
+          </a>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
